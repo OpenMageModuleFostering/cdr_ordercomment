@@ -24,7 +24,7 @@ class Cdr_OrderComment_Block_Checkout_Onepage_Review_Commentfield extends Mage_C
 
     public function getCommentHeader()
     {
-        return Mage::getStoreConfigFlag('ordercomment/settings/commentheader') ?: 'Order Comment';
+        return Mage::getStoreConfig('ordercomment/settings/commentheader');
     }
 
 }
