@@ -9,7 +9,7 @@
                     <fieldset>
                         <ul>
                             <li class="wide">
-                                <label for="cdr_ordercomment"><?php echo $this->__('Order Comment') ?></label>
+                                <label for="cdr_ordercomment"><?php echo $this->__($this->getCommentHeader()); ?></label>
                                 <div class="input-box">
                                     <textarea id="cdr_ordercomment" class="input-text validation-passed" name="cdr_ordercomment" title="<?php echo $this->__('CDR Order Comment') ?>" rows="5" cols="10" maxlength="<?php echo $this->getMaxCommentSize(); ?>"></textarea>
                                     <?php if ($this->limitTextArea()): ?>

@@ -66,4 +66,11 @@
             </checkout_type_multishipping_create_orders_single>
         </events>
     </frontend>
+    <default>
+        <ordercomment>
+            <settings>
+                <commentheader>Order Comment</commentheader>
+            </settings>
+        </ordercomment>
+    </default>
 </config>

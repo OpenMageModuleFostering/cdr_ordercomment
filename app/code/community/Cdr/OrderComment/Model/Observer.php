@@ -11,7 +11,7 @@ class Cdr_OrderComment_Model_Observer
     public function saveOrderComment($observer)
     {
         if (Mage::getStoreConfigFlag('ordercomment/settings/active')) {
-            $comment = trim(Mage::app()->getRequest()->getPost('cdr_ordercomment') ?: Mage::app()->getRequest()->getPost('customer_comment'));
+            $comment = trim(Mage::app()->getRequest()->getPost('cdr_ordercomment') ?: Mage::app()->getRequest()->getPost('customer_comment')).'cdr';
             if (!empty($comment)) {
                 $limit = (int) Mage::getStoreConfig('ordercomment/settings/limit');
                 if (is_integer($limit) && $limit > 0 && strlen($comment) > $limit)
