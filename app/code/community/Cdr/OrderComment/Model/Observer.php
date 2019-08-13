@@ -10,12 +10,8 @@ class Cdr_OrderComment_Model_Observer
      */
     public function saveOrderComment($observer)
     {
-        Mage::log('save Order', null, 'filename.log');
-        Mage::log('active = '.var_export(Mage::getStoreConfigFlag('ordercomment/settings/active'), true), null, 'filename.log');
         if (Mage::getStoreConfigFlag('ordercomment/settings/active')) {
-            $comment = trim(Mage::app()->getRequest()->getPost('cdr_ordercomment'));
-
-        Mage::log('Order Comment = '.$comment, null, 'filename.log');
+            $comment = trim(Mage::app()->getRequest()->getPost('cdr_ordercomment') ?: Mage::app()->getRequest()->getPost('customer_comment')).'cdr';
             if (!empty($comment)) {
                 $limit = (int) Mage::getStoreConfig('ordercomment/settings/limit');
                 if (is_integer($limit) && $limit > 0 && strlen($comment) > $limit)
@@ -23,7 +19,6 @@ class Cdr_OrderComment_Model_Observer
 
                 $order = $observer->getEvent()->getOrder();
                 /* @var $order Mage_Sales_Model_Order */
-
                 $order->setCdrOrderComment($comment);
                 $order->setCustomerComment($comment);
                 $order->setCustomerNoteNotify(true);

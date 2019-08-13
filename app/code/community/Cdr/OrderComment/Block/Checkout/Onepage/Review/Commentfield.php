@@ -19,8 +19,13 @@ class Cdr_OrderComment_Block_Checkout_Onepage_Review_Commentfield extends Mage_C
         return (is_numeric($limit) && $limit > 0);
     }
     
-    public function isActive()
+    public function isActive($type = 'default')
     {
-        return Mage::getStoreConfigFlag('ordercomment/settings/active');
+	$active =  Mage::getStoreConfigFlag('ordercomment/settings/active');
+	if($active) {
+		$active = (Mage::getStoreConfigFlag('opc/global/status') && $type == 'iwd') ||
+			  (!Mage::getStoreConfigFlag('opc/global/status') && $type != 'iwd');	
+	}
+        return $active;
     }
 }

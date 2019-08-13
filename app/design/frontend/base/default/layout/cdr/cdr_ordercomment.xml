@@ -11,6 +11,15 @@
             <block type="ordercomment/checkout_onepage_review_commentfield" name="cdr_order_comment" template="cdr/ordercomment/onepage/review/commentfield.phtml" />
         </reference>
     </checkout_multishipping_overview>
+
+
+	<opc_index_index translate="label">
+	        <reference name="checkout.order.comment">
+			<action method="setTemplate">
+				<template>cdr/ordercomment/onepage/iwd/comment.phtml</template>
+			</action>
+		</reference>
+	</opc_index_index>	
     
     <sales_order_view>
         <reference name="my.account.wrapper">
