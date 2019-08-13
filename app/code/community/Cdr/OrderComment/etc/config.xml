@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Cdr_OrderComment>
-            <version>0.0.2</version>
+            <version>0.0.3</version>
         </Cdr_OrderComment>
     </modules>
     <global>
@@ -34,7 +34,7 @@
         <layout>
             <updates>
                 <ordercomment>
-                    <file>cdr_ordercomment.xml</file>
+                    <file>cdr/cdr_ordercomment.xml</file>
                 </ordercomment>
             </updates>
         </layout>
@@ -43,7 +43,7 @@
         <layout>
             <updates>
                 <ordercomment>
-                    <file>cdr_ordercomment.xml</file>
+                    <file>cdr/cdr_ordercomment.xml</file>
                 </ordercomment>
             </updates>
         </layout>
