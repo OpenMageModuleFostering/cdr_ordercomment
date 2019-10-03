@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/Cdr_OrderComment",
+    "name": "openmage-module-fostering\/cdr_ordercomment",
     "type": "magento-module",
-    "license": "OSL",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Customers can add an Order Comment at time of checkout.",
     "authors": [
